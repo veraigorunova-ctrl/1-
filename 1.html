@@ -1,0 +1,351 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вера Горюнова | Бухгалтер по маркетплейсам</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --lime: #c6f866;
+            --lime-dark: #a8d948;
+            --skyblue: #6ecbf5;
+            --skyblue-dark: #4aa9d8;
+            --dark: #1a202c;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f9ff 0%, #f8ffe5 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(106, 203, 245, 0.15), 0 5px 15px rgba(198, 248, 102, 0.1);
+            max-width: 800px;
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--lime), var(--skyblue));
+        }
+
+        .card-header {
+            background: linear-gradient(110deg, var(--skyblue) 30%, var(--lime) 100%);
+            padding: 50px 40px 40px;
+            color: white;
+            position: relative;
+            text-align: center;
+        }
+
+        .profile-icon {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            border: 5px solid white;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            opacity: 0.95;
+            margin-bottom: 15px;
+        }
+
+        .company {
+            background-color: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .card-body {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--lime);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 i {
+            color: var(--skyblue);
+        }
+
+        p {
+            color: var(--dark);
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            background-color: rgba(198, 248, 102, 0.2);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #f0fdf9 0%, #f7fee7 100%);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid rgba(106, 203, 245, 0.3);
+            margin-top: 10px;
+        }
+
+        .phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+            background-color: white;
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .phone:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background-color: var(--lime);
+        }
+
+        .phone i {
+            color: var(--skyblue);
+            font-size: 1.8rem;
+        }
+
+        .contact-note {
+            text-align: center;
+            margin-top: 15px;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill {
+            background-color: rgba(106, 203, 245, 0.1);
+            color: var(--dark);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(106, 203, 245, 0.3);
+        }
+
+        .skill:nth-child(2n) {
+            background-color: rgba(198, 248, 102, 0.2);
+            border-color: rgba(198, 248, 102, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 40px;
+            background-color: #f8fafc;
+            color: var(--gray);
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        @media (max-width: 768px) {
+            .card-body {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .card-header, .card-body {
+                padding: 30px 25px;
+            }
+            
+            .profile-icon {
+                width: 100px;
+                height: 100px;
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <div class="profile-icon">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <h1>Вера Игоревна Горюнова</h1>
+            <div class="title">Бухгалтер по маркетплейсам</div>
+            <div class="company">Крупная компания</div>
+        </div>
+        
+        <div class="card-body">
+            <div class="left-column">
+                <div class="section">
+                    <h2><i class="fas fa-briefcase"></i> Профессиональный профиль</h2>
+                    <p>Я — <span class="highlight">бухгалтер, специализирующийся на работе с маркетплейсами</span>. Моя экспертиза охватывает полный цикл финансового учёта, налогового планирования и отчётности для онлайн-торговли.</p>
+                    <p>Работаю в <span class="highlight">крупной компании</span>, где отвечаю за автоматизацию и оптимизацию финансовых процессов на таких площадках, как Wildberries, Ozon, Яндекс.Маркет и других.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><i class="fas fa-star"></i> Ключевые навыки</h2>
+                    <div class="skills">
+                        <div class="skill">Учёт на маркетплейсах</div>
+                        <div class="skill">Налоговая отчётность</div>
+                        <div class="skill">Финансовый анализ</div>
+                        <div class="skill">Автоматизация процессов</div>
+                        <div class="skill">1C:Бухгалтерия</div>
+                        <div class="skill">ЭДО</div>
+                        <div class="skill">Бюджетирование</div>
+                        <div class="skill">МСФО</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="section">
+                    <h2><i class="fas fa-phone-alt"></i> Контактная информация</h2>
+                    <p>Для профессиональных запросов и сотрудничества вы можете связаться со мной по телефону:</p>
+                    
+                    <div class="contact-box">
+                        <div class="phone" id="phoneElement">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span id="phoneNumber">+7 (XXX) XXX-XX-XX</span>
+                        </div>
+                        <p class="contact-note">Нажмите на номер телефона, чтобы скопировать</p>
+                    </div>
+                    
+                    <p style="margin-top: 20px;">Готова к обсуждению сложных задач, оптимизации финансовых процессов и построению эффективной бухгалтерии для вашего бизнеса на маркетплейсах.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><i class="fas fa-rocket"></i> Опыт и подход</h2>
+                    <p>Моя работа строится на принципах <span class="highlight">точности, прозрачности и инноваций</span>. Я стремлюсь не просто вести учёт, а создавать финансовые системы, которые способствуют росту бизнеса.</p>
+                    <p>Специализируюсь на решении специфических задач онлайн-торговли: от учёта комиссий и возвратов до анализа рентабельности товарных категорий.</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 Вера Горюнова | Бухгалтер по маркетплейсам | Профессиональный профиль</p>
+        </footer>
+    </div>
+
+    <script>
+        // Функция для отображения номера телефона при клике (для примера)
+        document.getElementById('phoneElement').addEventListener('click', function() {
+            const phoneSpan = document.getElementById('phoneNumber');
+            
+            // В реальном коде здесь должен быть ваш настоящий номер
+            const realPhone = '+7 (999) 123-45-67';
+            
+            if(phoneSpan.textContent.includes('XXX')) {
+                phoneSpan.textContent = realPhone;
+                this.style.backgroundColor = 'var(--lime)';
+                
+                // Копирование номера в буфер обмена
+                navigator.clipboard.writeText(realPhone.replace(/[()\s-]/g, '')).then(() => {
+                    const originalText = phoneSpan.textContent;
+                    phoneSpan.textContent = 'Скопировано!';
+                    setTimeout(() => {
+                        phoneSpan.textContent = originalText;
+                    }, 1500);
+                });
+            } else {
+                // Если номер уже показан, просто копируем
+                navigator.clipboard.writeText(realPhone.replace(/[()\s-]/g, '')).then(() => {
+                    const originalText = phoneSpan.textContent;
+                    phoneSpan.textContent = 'Скопировано!';
+                    setTimeout(() => {
+                        phoneSpan.textContent = originalText;
+                    }, 1500);
+                });
+            }
+        });
+        
+        // Анимация при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            const card = document.querySelector('.card');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
